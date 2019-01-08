@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 export class Alarm extends Component {
     state = {
         enabled: false,
-        times: []
+        times: [],
+        desc: [],
     }
     disable = () => {
         this.setState({
@@ -17,6 +18,20 @@ export class Alarm extends Component {
         });
     }
 
+    handleClick = () => {
+      const {
+        times, desc
+      } = this.state;
+      times.push(document.getElementsByClassName('input')[0].value);
+      desc.push(document.getElementsByClassName('input')[1].value);
+      this.setState({
+        enabled: true,
+        times: times,
+        desc: desc
+      });
+    }
+
+
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -25,23 +40,20 @@ export class Alarm extends Component {
 
     render() {
         const {
-            enabled
-        } = this.state;
-        const {
-            hour,
-            minute,
-            description
+            enabled,
+            times,
+            desc
         } = this.state;
         const values = {
-            hour,
-            minute,
-            description
+            enabled,
+            times,
+            desc,
         };
-        if (enabled === true) {
+        if (enabled == true) {
             return(
                 <div id="alarm">
-                    <p class="time">{`${hour}:${minute}`}</p>
-                    <p class="description">{`${description}`}</p>
+                    <p class="time">{`${times}`}</p>
+                    <p class="description">{`${desc}`}</p>
                 </div>
             );
         } else {

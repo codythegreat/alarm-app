@@ -9,6 +9,8 @@ import { Toolbar, TextField, Button } from '@material-ui/core';
 
 
 class App extends Component {
+
+
   render() {
     return (
       <div className="App">
@@ -28,13 +30,16 @@ class App extends Component {
           </header>
           <TextField className="input" label="time" defaultValue="12:00:00"></TextField>
           <TextField className="input" label="description" defaultValue="Go To Class"></TextField>
-          <Button id="create-alarm">Add</Button>
+          <div id="button-container">
+            <Button variant="contained" id="create-alarm" onClick={Alarm.handleClick}>
+              Add
+            </Button>
+          </div>
         </div>
         <div id="active-alarms">
           <header><b>Active Alarms</b></header>
           <Alarm />
         </div>
-
       </div>
     );
   }
