@@ -1,0 +1,61 @@
+body, html {
+  height: 100%;
+  color: #FFF;
+  background: #53D;
+  margin: 0;
+  padding: 0;
+}
+
+.app-brand {
+  color: #fc8;
+}
+
+#top-time {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  background-color: #75F;
+  padding: .8em 0 .9em 0;
+}
+
+#top-time p {
+  margin: auto;
+}
+
+#build-alarm {
+  width: 100%;
+  padding: 1em;
+  background-color: #53D;
+}
+
+#build-alarm header {
+  padding: 0 0 1em 1em;
+  font-size: 1.5em;
+  color: #fc8;
+}
+
+#build-alarm .input {
+  width: 50%;
+  margin: 0 0 1em 30%;
+  background: white;
+  padding: .5em;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+}
+
+#active-alarms {
+  width: 100%;
+  padding: 1em;
+  background-color: #53D;
+  color: #fc8;
+}
+
+#active-alarms header {
+  padding: 0 0 1em 1em;
+  font-size: 1.5em;
+}
+
+#active-alarms p {
+  text-align: center;
+}
+/*# sourceMappingURL=App.css.map */

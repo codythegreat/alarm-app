@@ -1,0 +1,79 @@
+$colors: (
+    text-primary: #FFF,
+    text-secondary: #fc8,
+    bg-primary: #53D,
+    bg-secondary: #75F,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+body, html {
+  height: 100%;
+  color: color(text-primary);
+  background: color(bg-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.app-brand {
+  color: color(text-secondary);
+}
+
+#top-time {
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  background-color: color(bg-secondary);
+  padding: .8em 0 .9em 0;
+
+  p {
+    margin: auto;
+  }
+}
+
+#build-alarm {
+  width: 100%;
+  padding: 1em;
+  background-color: color(bg-primary);
+
+  header {
+    padding: 0 0 1em 1em;
+    font-size: 1.5em;
+    color: color(text-secondary);
+  }
+
+  .input {
+    width: 50%;
+    margin: 0 0 1em 30%;
+    background: white;
+    padding: .5em;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+  }
+}
+
+#active-alarms {
+  width: 100%;
+  padding: 1em;
+  background-color: color(bg-primary);
+  color: color(text-secondary);
+
+  header {
+    padding: 0 0 1em 1em;
+    font-size: 1.5em;
+  }
+
+  p {
+    text-align: center;
+  }
+}
