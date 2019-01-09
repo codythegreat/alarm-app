@@ -33,6 +33,18 @@ class App extends Component {
       enabled: true,
       alarms: curAlarms,
     })
+    setInterval( () => {
+      if (timeInput === this.state.curTime) {
+        alert(descInput);
+        let removeAlarm = this.state.alarms;
+        for (let i in removeAlarm) {
+          if (removeAlarm[i].time === timeInput && removeAlarm[i].desc === descInput) {
+            delete removeAlarm[i];
+          }
+        }
+
+      }
+    }, 1000);
   }
 
   render() {
